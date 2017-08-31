@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :iron_functions, key: :value
+#     config :fn, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:iron_functions, :key)
+#     Application.get_env(:fn, :key)
 #
 # Or configure a 3rd-party app:
 #
