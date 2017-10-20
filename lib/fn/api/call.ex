@@ -68,12 +68,12 @@ defmodule Fn.Api.Call do
   @doc """
   Get app-bound calls.
 
-  Get app-bound calls can filter to route-bound calls.
+  Get app-bound calls can filter to route-bound calls, results returned in created_at, descending order (newest first).
   """
-  def apps_app_calls_get(app, route) do
+  def apps_app_calls_get(app, path, cursor, per_page, from_time, to_time) do
     method = [method: :get]
     url = [url: "/apps/#{app}/calls"]
-    query_params = [query: [{:"route", route}]]
+    query_params = [query: [{:"path", path}, {:"cursor", cursor}, {:"per_page", per_page}, {:"from_time", from_time}, {:"to_time", to_time}]]
     header_params = []
     body_params = []
     form_params = []

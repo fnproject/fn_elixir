@@ -11,12 +11,12 @@ defmodule Fn.Api.Routes do
   @doc """
   Get route list by app name.
 
-  This will list routes for a particular app.
+  This will list routes for a particular app, returned in alphabetical order.
   """
-  def apps_app_routes_get(app) do
+  def apps_app_routes_get(app, image, cursor, per_page) do
     method = [method: :get]
     url = [url: "/apps/#{app}/routes"]
-    query_params = []
+    query_params = [query: [{:"image", image}, {:"cursor", cursor}, {:"per_page", per_page}]]
     header_params = []
     body_params = []
     form_params = []

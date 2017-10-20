@@ -68,12 +68,12 @@ defmodule Fn.Api.Apps do
   @doc """
   Get all app names.
 
-  Get a list of all the apps in the system.
+  Get a list of all the apps in the system, returned in alphabetical order.
   """
-  def apps_get() do
+  def apps_get(cursor, per_page) do
     method = [method: :get]
     url = [url: "/apps"]
-    query_params = []
+    query_params = [query: [{:"cursor", cursor}, {:"per_page", per_page}]]
     header_params = []
     body_params = []
     form_params = []
